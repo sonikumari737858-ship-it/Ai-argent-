@@ -1,0 +1,62 @@
+arenaai-ultimate/
+
+backend/
+ ├ server.js
+ ├ routes/
+ │   ├ chat.js
+ │   ├ image.js
+ │   ├ video.js
+ │   ├ voice.js
+ │   ├ music.js
+ │   ├ code.js
+ │   ├ game.js
+ │   ├ story.js
+ │   ├ meme.js
+ │   ├ thumbnail.js
+ │   ├ documents.js
+ │   └ arena.js
+ ├ controllers/
+ ├ middleware/
+ │   ├ auth.js
+ │   └ rateLimit.js
+ ├ services/
+ │   ├ openrouter.js
+ │   ├ imageService.js
+ │   ├ videoService.js
+ │   └ voiceService.js
+ ├ db/
+ │   ├ postgres.js
+ │   └ redis.js
+ └ package.json
+
+frontend/
+ ├ app/
+ │   ├ layout.tsx
+ │   ├ page.tsx
+ │   ├ chat/
+ │   ├ image/
+ │   ├ video/
+ │   ├ voice/
+ │   ├ music/
+ │   ├ code/
+ │   ├ game/
+ │   ├ story/
+ │   ├ meme/
+ │   ├ thumbnail/
+ │   ├ docs/
+ │   ├ arena/
+ │   └ admin/
+ ├ components/
+ │   ├ Navbar.tsx
+ │   ├ Sidebar.tsx
+ │   ├ ToolCard.tsx
+ │   ├ ChatBox.tsx
+ │   ├ PromptInput.tsx
+ │   └ ModelSelector.tsx
+ ├ lib/
+ │   ├ api.ts
+ │   └ auth.ts
+ └ tailwind.config.js
+
+database/
+ └ schema.sql
