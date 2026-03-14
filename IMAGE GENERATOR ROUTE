@@ -1,0 +1,9 @@
+router.post("/", async(req,res)=>{
+
+const {prompt,style}=req.body
+
+const imageURL=`https://image.pollinations.ai/prompt/${encodeURIComponent(prompt+" "+style)}`
+
+res.json({image:imageURL})
+
+})
