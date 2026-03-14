@@ -1,0 +1,18 @@
+export default function ToolCard({title,desc,link}){
+
+return(
+
+<a href={link}
+className="p-6 rounded-xl bg-white/10 backdrop-blur-lg hover:bg-white/20 transition">
+
+<h2 className="text-xl">{title}</h2>
+
+<p className="text-gray-400 mt-2">
+{desc}
+</p>
+
+</a>
+
+)
+
+}
