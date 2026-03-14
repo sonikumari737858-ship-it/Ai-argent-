@@ -1,0 +1,36 @@
+CREATE TABLE users (
+ id SERIAL PRIMARY KEY,
+ email TEXT UNIQUE,
+ password TEXT,
+ username TEXT,
+ created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE prompts (
+ id SERIAL PRIMARY KEY,
+ user_id INT REFERENCES users(id),
+ tool TEXT,
+ prompt TEXT,
+ response TEXT,
+ created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE favorites (
+ id SERIAL PRIMARY KEY,
+ user_id INT,
+ prompt_id INT
+);
+
+CREATE TABLE arena_votes (
+ id SERIAL PRIMARY KEY,
+ model_a TEXT,
+ model_b TEXT,
+ winner TEXT
+);
+
+CREATE TABLE analytics (
+ id SERIAL PRIMARY KEY,
+ user_id INT,
+ tool TEXT,
+ usage_time TIMESTAMP DEFAULT NOW()
+);
