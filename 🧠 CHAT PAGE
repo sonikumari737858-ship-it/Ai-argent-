@@ -1,0 +1,46 @@
+"use client"
+
+import { useState } from "react"
+import axios from "axios"
+
+export default function Chat(){
+
+const [prompt,setPrompt]=useState("")
+const [response,setResponse]=useState("")
+
+async function send(){
+
+const res=await axios.post("/api/chat",{prompt})
+
+setResponse(res.data.response)
+
+}
+
+return(
+
+<div>
+
+<h1 className="text-3xl mb-4">AI Chat</h1>
+
+<textarea
+className="w-full p-4 bg-gray-900"
+value={prompt}
+onChange={(e)=>setPrompt(e.target.value)}
+/>
+
+<button
+onClick={send}
+className="bg-purple-500 px-6 py-2 mt-4 rounded"
+>
+Send
+</button>
+
+<pre className="mt-6 bg-gray-800 p-4">
+{response}
+</pre>
+
+</div>
+
+)
+
+}
