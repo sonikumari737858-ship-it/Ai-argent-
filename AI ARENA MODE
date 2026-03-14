@@ -1,0 +1,13 @@
+router.post("/", async(req,res)=>{
+
+const {prompt,modelA,modelB}=req.body
+
+const responseA=await generateText(prompt,modelA)
+const responseB=await generateText(prompt,modelB)
+
+res.json({
+modelA:responseA,
+modelB:responseB
+})
+
+})
